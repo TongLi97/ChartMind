@@ -1,5 +1,3 @@
-<div style="text-align: center; max-width: 800px; margin: 0 auto;">
-
 # ChartMind <img src="/images/chartMind.png" width="32" height="32" style="vertical-align: middle;"> : Benchmark and Reasoning Insights of Multimodal Chart Question Answering
 
 **Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang, Ronghua Liang**
@@ -36,5 +34,3 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 - **Dataset**: [Link to data]
 
 ## Citation
-
-</div>
