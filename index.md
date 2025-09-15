@@ -1,4 +1,4 @@
-# ChartMind <img src="/images/chartMind.png" width="32" height="32" style="vertical-align: middle;"> : Benchmark and Reasoning Insights of Multimodal Chart Question Answering
+# ChartMind ![ChartMind Icon](/images/chartMind.png): Benchmark and Reasoning Insights of Multimodal Chart Question Answering
 
 **Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang, Ronghua Liang**
 
@@ -11,7 +11,7 @@
 
 <!-- 流程图 -->
 <div style="text-align: center; margin: 40px 0;">
-  <img src="/images/cover.png" alt="ChartMind Overview" style="max-width: 100%; height: auto;">
+  ![ChartMind Overview](/images/cover.png)
 </div>
 
 ## Abstract
