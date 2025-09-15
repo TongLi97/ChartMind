@@ -4,9 +4,8 @@ url: "https://tongli97.github.io"
 baseurl: "/ChartMind"
 
 # Theme
-remote_theme: pages-themes/cayman@v0.2.0
 plugins:
-- jekyll-remote-theme
+- jekyll-feed
 
 # Author
 author:
