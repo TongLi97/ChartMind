@@ -4,9 +4,9 @@
 
 <!-- 按钮样式的链接 -->
 <div style="text-align: center; margin: 30px 0;">
-  <a href="#" style="background-color: #4a5568; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📄 Paper</a>
-  <a href="#" style="background-color: #2d3748; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">💻 Code</a>
-  <a href="https://huggingface.co/datasets/guodaosun/Mega60k" style="background-color: #c53030; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📊 Dataset</a>
+  <a href="#" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📑 Paper</a>
+  <a href="#" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">⭐ Code</a>
+  <a href="https://huggingface.co/datasets/guodaosun/Mega60k" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">🧱 Dataset</a>
 </div>
 
 <!-- 流程图 -->
