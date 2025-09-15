@@ -11,7 +11,9 @@
 
 <!-- 流程图 -->
 <div style="text-align: center; margin: 40px 0;">
+  
   ![ChartMind Overview](/images/cover.png)
+  
 </div>
 
 ## Abstract
