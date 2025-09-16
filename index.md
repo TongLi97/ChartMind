@@ -732,7 +732,7 @@ We employ a Test-Time Scaling-based framework to achieve fine-grained deconstruc
 
 If you find this work useful for your research, please cite our paper:
 ```bibtex
-@article{ChartMind2025,
+@article{ChartMind2025li,
     title={ChartMind: Benchmark and Reasoning Insights of Multimodal Chart Question Answering},
     author={Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang and Ronghua Liang},
     year={2025}
