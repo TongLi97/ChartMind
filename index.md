@@ -595,8 +595,8 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
   <tr>
     <td class="tg-sqna">43.66%</td>
     <td class="tg-sqna">56.73%</td>
-    <td class="tg-sqna">58.95%<span style="color: green;">↑</span>12.71%</td>
-    <td class="tg-sqna">41.45%<span style="color: red;">↓</span>5.20%</td>
+    <td class="tg-sqna">58.95%<span style="color: green;">↑12.71%</span></td>
+    <td class="tg-sqna">41.45%<span style="color: red;">↓5.20%</span></td>
     <td class="tg-sqna">48.97%</td>
     <td class="tg-sqna">45.39%</td>
     <td class="tg-sqna">45.29%</td>
@@ -615,13 +615,13 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
   </tr>
   <tr>
     <td class="tg-sqna">52.87%</td>
-    <td class="tg-sqna">68.10%<span style="color: green;">↑</span>8.89%</td>
-    <td class="tg-sqna">71.72%<span style="color: green;">↑</span>18.61%</td>
+    <td class="tg-sqna">68.10%<span style="color: green;">↑8.89%</span></td>
+    <td class="tg-sqna">71.72%<span style="color: green;">↑18.61%</span></td>
     <td class="tg-sqna">55.51%</td>
-    <td class="tg-sqna">65.23%<span style="color: green;">↑</span>5.16%</td>
+    <td class="tg-sqna">65.23%<span style="color: green;">↑5.16%</span></td>
     <td class="tg-sqna">59.59%</td>
     <td class="tg-sqna">52.51%</td>
-    <td class="tg-sqna">60.13%<span style="color: green;">↑</span>5.80%</td>
+    <td class="tg-sqna">60.13%<span style="color: green;">↑5.80%</span></td>
   </tr>
   <tr>
     <td class="tg-4wl0" rowspan="2">Gemini 2.5 Flash</td>
@@ -635,14 +635,14 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
     <td class="tg-sqna">53.07%</td>
   </tr>
   <tr>
-    <td class="tg-sqna">65.50%<span style="color: green;">↑</span>20.58%</td>
-    <td class="tg-sqna">81.44%<span style="color: green;">↑</span>22.34%</td>
-    <td class="tg-sqna">83.62%<span style="color: green;">↑</span>39.85%</td>
+    <td class="tg-sqna">65.50%<span style="color: green;">↑20.58%</span></td>
+    <td class="tg-sqna">81.44%<span style="color: green;">↑22.34%</span></td>
+    <td class="tg-sqna">83.62%<span style="color: green;">↑39.85%</span></td>
     <td class="tg-sqna">56.43%</td>
-    <td class="tg-sqna">64.71%<span style="color: green;">↑</span>7.09%</td>
-    <td class="tg-sqna">68.68%<span style="color: green;">↑</span>10.20%</td>
-    <td class="tg-sqna">64.90%<span style="color: green;">↑</span>9.48%</td>
-    <td class="tg-sqna">67.71%<span style="color: green;">↑</span>14.65%</td>
+    <td class="tg-sqna">64.71%<span style="color: green;">↑7.09%</span></td>
+    <td class="tg-sqna">68.68%<span style="color: green;">↑10.20%</span></td>
+    <td class="tg-sqna">64.90%<span style="color: green;">↑9.48%</span></td>
+    <td class="tg-sqna">67.71%<span style="color: green;">↑14.65%</span></td>
   </tr>
   <tr>
     <td class="tg-4wl0" rowspan="2">Average</td>
@@ -656,12 +656,12 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
     <td class="tg-sqna"></td>
   </tr>
   <tr>
-    <td class="tg-sqna">54.01%<span style="color: green;">↑</span>8.40%</td>
-    <td class="tg-sqna">68.76%<span style="color: green;">↑</span>11.44%</td>
-    <td class="tg-sqna">71.43%<span style="color: green;">↑</span>23.72%</td>
+    <td class="tg-sqna">54.01%<span style="color: green;">↑8.40%</span></td>
+    <td class="tg-sqna">68.76%<span style="color: green;">↑11.44%</span></td>
+    <td class="tg-sqna">71.43%<span style="color: green;">↑23.72%</span></td>
     <td class="tg-sqna">51.13%</td>
     <td class="tg-sqna">59.64%</td>
-    <td class="tg-sqna">57.88%<span style="color: green;">↑</span>5.28%</td>
+    <td class="tg-sqna">57.88%<span style="color: green;">↑5.28%</span></td>
     <td class="tg-sqna">54.23%</td>
     <td class="tg-sqna"></td>
   </tr>
