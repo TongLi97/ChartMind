@@ -567,104 +567,104 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 </colgroup>
 <thead>
   <tr>
-    <th class="tg-sqna" rowspan="2">MLLMs</th>
-    <th class="tg-sqna" colspan="5">Structural-level</th>
-    <th class="tg-sqna" colspan="2">Pixel-level</th>
-    <th class="tg-sqna" rowspan="2">Average</th>
+    <th class="tg-49iy" rowspan="2">MLLMs</th>
+    <th class="tg-49iy" colspan="5">Structural-level</th>
+    <th class="tg-49iy" colspan="2">Pixel-level</th>
+    <th class="tg-49iy" rowspan="2">Average</th>
   </tr>
   <tr>
-    <th class="tg-sqna">data mark omission</th>
-    <th class="tg-sqna">occlusion</th>
-    <th class="tg-sqna">label omission</th>
-    <th class="tg-sqna">axis omission</th>
-    <th class="tg-sqna">legend omission</th>
-    <th class="tg-sqna">blurring</th>
-    <th class="tg-sqna">rotation</th>
+    <th class="tg-49iy">data mark omission</th>
+    <th class="tg-49iy">occlusion</th>
+    <th class="tg-49iy">label omission</th>
+    <th class="tg-49iy">axis omission</th>
+    <th class="tg-49iy">legend omission</th>
+    <th class="tg-49iy">blurring</th>
+    <th class="tg-49iy">rotation</th>
   </tr></thead>
 <tbody>
   <tr>
-    <td class="tg-4wl0" rowspan="2">Qwen2.5-VL-72B</td>
-    <td class="tg-sqna">42.53%</td>
-    <td class="tg-sqna">53.65%</td>
-    <td class="tg-sqna">46.24%</td>
-    <td class="tg-sqna">46.65%</td>
-    <td class="tg-sqna">50.80%</td>
-    <td class="tg-sqna">44.12%</td>
-    <td class="tg-sqna">46.13%</td>
-    <td class="tg-sqna">47.09%</td>
+    <td class="tg-vml0" rowspan="2">Qwen2.5-VL-72B</td>
+    <td class="tg-49iy">42.53%</td>
+    <td class="tg-49iy">53.65%</td>
+    <td class="tg-49iy">46.24%</td>
+    <td class="tg-49iy">46.65%</td>
+    <td class="tg-49iy">50.80%</td>
+    <td class="tg-49iy">44.12%</td>
+    <td class="tg-49iy">46.13%</td>
+    <td class="tg-49iy">47.09%</td>
   </tr>
   <tr>
-    <td class="tg-sqna">43.66%</td>
-    <td class="tg-sqna">56.73%</td>
-    <td class="tg-sqna">58.95%<span style="color: green;">↑12.71%</span></td>
-    <td class="tg-sqna">41.45%<span style="color: red;">↓5.20%</span></td>
-    <td class="tg-sqna">48.97%</td>
-    <td class="tg-sqna">45.39%</td>
-    <td class="tg-sqna">45.29%</td>
-    <td class="tg-sqna">47.73%</td>
+    <td class="tg-49iy">43.66%</td>
+    <td class="tg-49iy">56.73%</td>
+    <td class="tg-49iy">58.95%<span style="color: green;">↑12.71%</span></td>
+    <td class="tg-49iy">41.45%<span style="color: red;">↓5.20%</span></td>
+    <td class="tg-49iy">48.97%</td>
+    <td class="tg-49iy">45.39%</td>
+    <td class="tg-49iy">45.29%</td>
+    <td class="tg-49iy">47.73%</td>
   </tr>
   <tr>
-    <td class="tg-4wl0" rowspan="2">GPT-4o</td>
-    <td class="tg-sqna">49.37%</td>
-    <td class="tg-sqna">59.21%</td>
-    <td class="tg-sqna">53.11%</td>
-    <td class="tg-sqna">54.62%</td>
-    <td class="tg-sqna">60.07%</td>
-    <td class="tg-sqna">55.23%</td>
-    <td class="tg-sqna">48.40%</td>
-    <td class="tg-sqna">54.33%</td>
+    <td class="tg-vml0" rowspan="2">GPT-4o</td>
+    <td class="tg-49iy">49.37%</td>
+    <td class="tg-49iy">59.21%</td>
+    <td class="tg-49iy">53.11%</td>
+    <td class="tg-49iy">54.62%</td>
+    <td class="tg-49iy">60.07%</td>
+    <td class="tg-49iy">55.23%</td>
+    <td class="tg-49iy">48.40%</td>
+    <td class="tg-49iy">54.33%</td>
   </tr>
   <tr>
-    <td class="tg-sqna">52.87%</td>
-    <td class="tg-sqna">68.10%<span style="color: green;">↑8.89%</span></td>
-    <td class="tg-sqna">71.72%<span style="color: green;">↑18.61%</span></td>
-    <td class="tg-sqna">55.51%</td>
-    <td class="tg-sqna">65.23%<span style="color: green;">↑5.16%</span></td>
-    <td class="tg-sqna">59.59%</td>
-    <td class="tg-sqna">52.51%</td>
-    <td class="tg-sqna">60.13%<span style="color: green;">↑5.80%</span></td>
+    <td class="tg-49iy">52.87%</td>
+    <td class="tg-49iy">68.10%<span style="color: green;">↑8.89%</span></td>
+    <td class="tg-49iy">71.72%<span style="color: green;">↑18.61%</span></td>
+    <td class="tg-49iy">55.51%</td>
+    <td class="tg-49iy">65.23%<span style="color: green;">↑5.16%</span></td>
+    <td class="tg-49iy">59.59%</td>
+    <td class="tg-49iy">52.51%</td>
+    <td class="tg-49iy">60.13%<span style="color: green;">↑5.80%</span></td>
   </tr>
   <tr>
-    <td class="tg-4wl0" rowspan="2">Gemini 2.5 Flash</td>
-    <td class="tg-sqna">44.92%</td>
-    <td class="tg-sqna">59.11%</td>
-    <td class="tg-sqna">43.77%</td>
-    <td class="tg-sqna">52.61%</td>
-    <td class="tg-sqna">57.62%</td>
-    <td class="tg-sqna">58.48%</td>
-    <td class="tg-sqna">55.41%</td>
-    <td class="tg-sqna">53.07%</td>
+    <td class="tg-vml0" rowspan="2">Gemini 2.5 Flash</td>
+    <td class="tg-49iy">44.92%</td>
+    <td class="tg-49iy">59.11%</td>
+    <td class="tg-49iy">43.77%</td>
+    <td class="tg-49iy">52.61%</td>
+    <td class="tg-49iy">57.62%</td>
+    <td class="tg-49iy">58.48%</td>
+    <td class="tg-49iy">55.41%</td>
+    <td class="tg-49iy">53.07%</td>
   </tr>
   <tr>
-    <td class="tg-sqna">65.50%<span style="color: green;">↑20.58%</span></td>
-    <td class="tg-sqna">81.44%<span style="color: green;">↑22.34%</span></td>
-    <td class="tg-sqna">83.62%<span style="color: green;">↑39.85%</span></td>
-    <td class="tg-sqna">56.43%</td>
-    <td class="tg-sqna">64.71%<span style="color: green;">↑7.09%</span></td>
-    <td class="tg-sqna">68.68%<span style="color: green;">↑10.20%</span></td>
-    <td class="tg-sqna">64.90%<span style="color: green;">↑9.48%</span></td>
-    <td class="tg-sqna">67.71%<span style="color: green;">↑14.65%</span></td>
+    <td class="tg-49iy">65.50%<span style="color: green;">↑20.58%</span></td>
+    <td class="tg-49iy">81.44%<span style="color: green;">↑22.34%</span></td>
+    <td class="tg-49iy">83.62%<span style="color: green;">↑39.85%</span></td>
+    <td class="tg-49iy">56.43%</td>
+    <td class="tg-49iy">64.71%<span style="color: green;">↑7.09%</span></td>
+    <td class="tg-49iy">68.68%<span style="color: green;">↑10.20%</span></td>
+    <td class="tg-49iy">64.90%<span style="color: green;">↑9.48%</span></td>
+    <td class="tg-49iy">67.71%<span style="color: green;">↑14.65%</span></td>
   </tr>
   <tr>
-    <td class="tg-4wl0" rowspan="2">Average</td>
-    <td class="tg-sqna">45.61%</td>
-    <td class="tg-sqna">57.32%</td>
-    <td class="tg-sqna">47.71%</td>
-    <td class="tg-sqna">51.29%</td>
-    <td class="tg-sqna">56.17%</td>
-    <td class="tg-sqna">52.61%</td>
-    <td class="tg-sqna">49.98%</td>
-    <td class="tg-sqna"></td>
+    <td class="tg-vml0" rowspan="2">Average</td>
+    <td class="tg-49iy">45.61%</td>
+    <td class="tg-49iy">57.32%</td>
+    <td class="tg-49iy">47.71%</td>
+    <td class="tg-49iy">51.29%</td>
+    <td class="tg-49iy">56.17%</td>
+    <td class="tg-49iy">52.61%</td>
+    <td class="tg-49iy">49.98%</td>
+    <td class="tg-49iy"></td>
   </tr>
   <tr>
-    <td class="tg-sqna">54.01%<span style="color: green;">↑8.40%</span></td>
-    <td class="tg-sqna">68.76%<span style="color: green;">↑11.44%</span></td>
-    <td class="tg-sqna">71.43%<span style="color: green;">↑23.72%</span></td>
-    <td class="tg-sqna">51.13%</td>
-    <td class="tg-sqna">59.64%</td>
-    <td class="tg-sqna">57.88%<span style="color: green;">↑5.28%</span></td>
-    <td class="tg-sqna">54.23%</td>
-    <td class="tg-sqna"></td>
+    <td class="tg-49iy">54.01%<span style="color: green;">↑8.40%</span></td>
+    <td class="tg-49iy">68.76%<span style="color: green;">↑11.44%</span></td>
+    <td class="tg-49iy">71.43%<span style="color: green;">↑23.72%</span></td>
+    <td class="tg-49iy">51.13%</td>
+    <td class="tg-49iy">59.64%</td>
+    <td class="tg-49iy">57.88%<span style="color: green;">↑5.28%</span></td>
+    <td class="tg-49iy">54.23%</td>
+    <td class="tg-49iy"></td>
   </tr>
 </tbody></table>
 </div>
