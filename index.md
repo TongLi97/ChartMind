@@ -2,7 +2,9 @@
 
 # ChartMind <img src="images/chartMind.png" width="32" height="32" style="vertical-align: middle;">: Benchmark and Reasoning Insights of Multimodal Chart Question Answering
 
-**Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang, Ronghua Liang**
+**Tong Li<sup>†</sup>, Guodao Sun<sup>†</sup>, Shunkai Wang<sup>†</sup>, Zuoyu Tang<sup>†</sup>, Yang Shu<sup>†</sup>, Xueqian Zheng<sup>†</sup>, Haixia Wang<sup>†</sup>, Ronghua Liang<sup>‡</sup>**
+
+<sup>†</sup>Zhejiang University of Technology <sup>‡</sup>Zhejiang University of Science and Technology 
 
 <div style="text-align: center; margin: 30px 0;">
   <a href="#" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📑 Paper</a>
@@ -568,6 +570,12 @@ To evaluate the multimodal reasoning capabilities of MLLMs, we design three expe
 </tbody></table>
 </div>
 
+Statistical analysis based on the coefficient of variation:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/coefficient_of_variation.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
+
 ### Degradation and Compensation Evaluation
 This section presents fine-grained degradation and compensation question-answering statistics. Performance changes exceeding 5% are highlighted.
 
@@ -685,6 +693,12 @@ This section presents fine-grained degradation and compensation question-answeri
     <td class="tg-49iy"></td>
   </tr>
 </tbody></table>
+</div>
+
+Degradation degree and question-answering accuracy statistics:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/degraded_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
 </div>
 
 
