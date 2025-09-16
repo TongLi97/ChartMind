@@ -29,39 +29,522 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 
 ## Evaluation Results
 
-|          Models         |              |   CTR   |    VEC   |    SRP   |        VPR        |         VE        |        EVJ        |    SC    |    NF   |         NC        |        MSR        |         VA        | Average |
-|:-----------------------:|:------------:|:-------:|:--------:|:--------:|:-----------------:|:-----------------:|:-----------------:|:--------:|:-------:|:-----------------:|:-----------------:|:-----------------:|:-------:|
-|                         |              | <em>T<sub>Acc</sub></em> | <em>R<sub>Acc</sub></em> | <em>T<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> | <em>R<sub>Acc</sub></em> | <em>M<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> | <em>T<sub>Acc</sub>/R<sub>Acc</sub></em> |         |
-| CogVLM2                 | visual       |  5.80%  |  15.30%  |  16.20%  |       7.30%       |       7.00%       |       5.20%       |   2.90%  |  4.50%  |       35.90%      |       5.80%       |       11.40%      |  10.66% |
-| LLaVA 1.5               | visual       |  9.70%  |  49.70%  |  13.60%  |       2.30%       |       2.00%       |       1.80%       |   2.10%  |  2.70%  |       37.70%      |       3.90%       |       7.40%       |  12.08% |
-| DeepSeek-VL2            | visual       |  85.80% |  74.80%  |  52.90%  |       31.00%      |       40.50%      |       32.70%      |  11.90%  |  16.00% |       49.30%      |       19.20%      |       28.30%      |  40.22% |
-| InternVL3               | visual       |  75.90% |  84.10%  |  57.10%  |       29.59%      |       58.10%      |       45.70%      |  35.40%  |  21.50% |       64.60%      |       22.60%      |       27.80%      |  47.49% |
-|                         | fusion       | 76.50%<span style="color: green;">↑</span> |  75.60%<span style="color: red;">↓</span> |  22.80%<span style="color: red;">↓</span> |       4.00%<span style="color: red;">↓</span>      |      10.10%<span style="color: red;">↓</span>      |       5.10%<span style="color: red;">↓</span>      |  40.70%<span style="color: green;">↑</span> | 18.50%<span style="color: red;">↓</span> |      49.50%<span style="color: red;">↓</span>      |       4.10%<span style="color: red;">↓</span>      |       1.50%<span style="color: red;">↓</span>      | 28.04%<span style="color: red;">↓</span> |
-|                         | compensation | 88.10%<span style="color: green;">↑</span> |  88.00%<span style="color: green;">↑</span> |  50.00%<span style="color: red;">↓</span> |       23.3%<span style="color: red;">↓</span>      |      75.20%<span style="color: green;">↑</span>      |      48.00%<span style="color: green;">↑</span>      |  55.80%<span style="color: green;">↑</span> | 17.10%<span style="color: red;">↓</span> |      63.00%<span style="color: red;">↓</span>      |       8.10%<span style="color: red;">↓</span>      |      45.50%<span style="color: green;">↑</span>      | 51.10%<span style="color: green;">↑</span> |
-| LLaMA4 Maverick         | visual       | 100.00% |  84.90%  |  73.60%  |       46.30%      |       56.80%      |       49.70%      |  47.50%  |  28.40% |       71.60%      |       39.10%      |       38.80%      |  57.88% |
-|                         | fusion       | 100.00% |  84.40%<span style="color: red;">↓</span> |  48.80%<span style="color: red;">↓</span> |      23.90%<span style="color: red;">↓</span>      |      25.50%<span style="color: red;">↓</span>      |      19.50%<span style="color: red;">↓</span>      |  22.40%<span style="color: red;">↓</span> | 10.70%<span style="color: red;">↓</span> |      56.80%<span style="color: red;">↓</span>      |      19.70%<span style="color: red;">↓</span>      |      19.90%<span style="color: red;">↓</span>      | 39.24%<span style="color: red;">↓</span> |
-|                         | compensation | 99.90%<span style="color: red;">↓</span> |  86.30%<span style="color: green;">↑</span> |  63.30%<span style="color: red;">↓</span> |      36.70%<span style="color: red;">↓</span>      |      41.70%<span style="color: red;">↓</span>      |      38.90%<span style="color: red;">↓</span>      |  32.60%<span style="color: red;">↓</span> | 18.80%<span style="color: red;">↓</span> |      62.30%<span style="color: red;">↓</span>      |      30.40%<span style="color: red;">↓</span>      |      22.40%<span style="color: red;">↓</span>      | 48.48%<span style="color: red;">↓</span> |
-| Qwen2.5-VL-32B          | visual       |  99.10% |  84.90%  |  69.60%  |       40.60%      |       53.90%      |       45.10%      |  37.20%  |  24.40% |       64.60%      |       36.10%      |       36.40%      |  53.81% |
-|                         | fusion       |  99.10% |  84.90%  |  68.30%<span style="color: red;">↓</span> |      38.40%<span style="color: red;">↓</span>      |      48.80%<span style="color: red;">↓</span>      |      43.50%<span style="color: red;">↓</span>      |  33.80%<span style="color: red;">↓</span> | 21.70%<span style="color: red;">↓</span> |      63.10%<span style="color: red;">↓</span>      |      32.90%<span style="color: red;">↓</span>      |      34.30%<span style="color: red;">↓</span>      | 51.71%<span style="color: red;">↓</span> |
-|                         | compensation |  99.10% |  81.90%<span style="color: red;">↓</span> |  57.60%<span style="color: red;">↓</span> |      27.70%<span style="color: red;">↓</span>      |      37.30%<span style="color: red;">↓</span>      |      33.60%<span style="color: red;">↓</span>      |  25.70%<span style="color: red;">↓</span> | 14.20%<span style="color: red;">↓</span> |      56.70%<span style="color: red;">↓</span>      |      25.70%<span style="color: red;">↓</span>      |      29.40%<span style="color: red;">↓</span>      | 44.45%<span style="color: red;">↓</span> |
-| Qwen2.5-VL-72B          | visual       |  99.80% |  85.00%  |  69.50%  |       39.80%      |       58.50%      |       47.00%      |  43.30%  |  23.80% |       67.80%      |       37.30%      |       34.30%      |  55.10% |
-|                         | fusion       | 99.40%<span style="color: red;">↓</span> |  86.70%<span style="color: green;">↑</span> |  66.30%<span style="color: red;">↓</span> |      36.10%<span style="color: red;">↓</span>      |      52.30%<span style="color: red;">↓</span>      |      44.50%<span style="color: red;">↓</span>      |  37.80%<span style="color: red;">↓</span> | 20.80%<span style="color: red;">↓</span> |      64.60%<span style="color: red;">↓</span>      |      32.80%<span style="color: red;">↓</span>      |      34.60%<span style="color: green;">↑</span>      | 52.35%<span style="color: red;">↓</span> |
-|                         | compensation | 99.00%<span style="color: red;">↓</span> |  84.20%<span style="color: red;">↓</span> |  57.80%<span style="color: red;">↓</span> |      26.90%<span style="color: red;">↓</span>      |      38.00%<span style="color: red;">↓</span>      |      35.70%<span style="color: red;">↓</span>      |  27.90%<span style="color: red;">↓</span> | 13.40%<span style="color: red;">↓</span> |      58.00%<span style="color: red;">↓</span>      |      25.10%<span style="color: red;">↓</span>      |      28.50%<span style="color: red;">↓</span>      | 44.95%<span style="color: red;">↓</span> |
-| Claude 3.5 Haiku        | visual       | 100.00% |  85.20%  |  67.10%  |       40.00%      |       53.40%      |       46.50%      |  33.90%  |  23.00% |       65.60%      |       32.30%      |       32.50%      |  52.68% |
-|                         | fusion       | 100.00% |  87.80%<span style="color: green;">↑</span> |  65.10%<span style="color: red;">↓</span> |      38.50%<span style="color: red;">↓</span>      |      51.30%<span style="color: red;">↓</span>      |      45.30%<span style="color: red;">↓</span>      |  31.40%<span style="color: red;">↓</span> | 22.50%<span style="color: red;">↓</span> |      62.80%<span style="color: red;">↓</span>      |      33.00%<span style="color: green;">↑</span>      |      29.90%<span style="color: red;">↓</span>      | 51.60%<span style="color: red;">↓</span> |
-|                         | compensation | 99.60%<span style="color: red;">↓</span> |  91.00%<span style="color: green;">↑</span> |  57.90%<span style="color: red;">↓</span> |      27.20%<span style="color: red;">↓</span>      |      37.60%<span style="color: red;">↓</span>      |      40.10%<span style="color: red;">↓</span>      |  22.60%<span style="color: red;">↓</span> | 18.20%<span style="color: red;">↓</span> |      56.40%<span style="color: red;">↓</span>      |      28.90%<span style="color: red;">↓</span>      |      24.00%<span style="color: red;">↓</span>      | 45.77%<span style="color: red;">↓</span> |
-| GLM-4V-Plus             | visual       |  99.90% |  85.50%  |  73.70%  |       47.00%      |       63.80%      |       53.30%      |  45.00%  |  27.30% |       76.20%      |       42.30%      |       40.20%      |  59.47% |
-|                         | fusion       | 99.70%<span style="color: red;">↓</span> |  81.40%<span style="color: red;">↓</span> |  62.20%<span style="color: red;">↓</span> |      38.10%<span style="color: red;">↓</span>      |      46.50%<span style="color: red;">↓</span>      |      42.80%<span style="color: red;">↓</span>      |  33.90%<span style="color: red;">↓</span> | 18.70%<span style="color: red;">↓</span> |      68.30%<span style="color: red;">↓</span>      |      32.40%<span style="color: red;">↓</span>      |      35.90%<span style="color: red;">↓</span>      | 50.90%<span style="color: red;">↓</span> |
-|                         | compensation | 99.30%<span style="color: red;">↓</span> |  80.60%<span style="color: red;">↓</span> |  54.50%<span style="color: red;">↓</span> |      31.10%<span style="color: red;">↓</span>      |      38.40%<span style="color: red;">↓</span>      |      35.00%<span style="color: red;">↓</span>      |  28.30%<span style="color: red;">↓</span> | 16.30%<span style="color: red;">↓</span> |      63.10%<span style="color: red;">↓</span>      |      28.10%<span style="color: red;">↓</span>      |      27.30%<span style="color: red;">↓</span>      | 45.64%<span style="color: red;">↓</span> |
-| Doubao 1.5   Vision-Pro | visual       | 100.00% |  86.00%  |  75.60%  |       44.20%      |       63.10%      |       48.80%      |  41.30%  |  35.20% |       72.60%      |       42.20%      |       46.30%      |  59.57% |
-|                         | fusion       | 100.00% |  87.20%<span style="color: green;">↑</span> |  73.10%<span style="color: red;">↓</span> |      44.90%<span style="color: green;">↑</span>      |      60.30%<span style="color: red;">↓</span>      |      51.30%<span style="color: green;">↑</span>      |  38.70%<span style="color: red;">↓</span> | 34.60%<span style="color: red;">↓</span> |      71.50%<span style="color: red;">↓</span>      |      36.90%<span style="color: red;">↓</span>      |      43.90%<span style="color: red;">↓</span>      | 58.40%<span style="color: red;">↓</span> |
-|                         | compensation |  99.7%<span style="color: red;">↓</span> |  85.80%<span style="color: red;">↓</span> |  61.50%<span style="color: red;">↓</span> |      32.10%<span style="color: red;">↓</span>      |      42.50%<span style="color: red;">↓</span>      |      38.70%<span style="color: red;">↓</span>      |  23.70%<span style="color: red;">↓</span> | 21.50%<span style="color: red;">↓</span> |      58.80%<span style="color: red;">↓</span>      |      23.70%<span style="color: red;">↓</span>      |      22.50%<span style="color: red;">↓</span>      | 46.41%<span style="color: red;">↓</span> |
-| GPT-4o                  | visual       | 100.00% |  89.40%  |  80.90%  |       55.10%      |       77.80%      |       59.20%      |  61.00%  |  41.70% |       77.10%      |       52.40%      |       44.90%      |  67.23% |
-|                         | fusion       | 100.00% |  90.50%<span style="color: green;">↑</span> |  80.10%<span style="color: red;">↓</span> |      57.49%<span style="color: green;">↑</span>      |      70.70%<span style="color: red;">↓</span>      |      55.00%<span style="color: red;">↓</span>      |  56.60%<span style="color: red;">↓</span> | 39.10%<span style="color: red;">↓</span> |      74.80%<span style="color: red;">↓</span>      |      54.50%<span style="color: green;">↑</span>      |      35.20%<span style="color: red;">↓</span>      | 64.91%<span style="color: red;">↓</span> |
-|                         | compensation | 100.00% |  87.60%<span style="color: red;">↓</span> |  70.60%<span style="color: red;">↓</span> |      45.50%<span style="color: red;">↓</span>      |      52.90%<span style="color: red;">↓</span>      |      47.40%<span style="color: red;">↓</span>      |  44.90%<span style="color: red;">↓</span> | 31.90%<span style="color: red;">↓</span> |      67.20%<span style="color: red;">↓</span>      |      38.10%<span style="color: red;">↓</span>      |      22.30%<span style="color: red;">↓</span>      | 55.31%<span style="color: red;">↓</span> |
-| Gemini 2.5 Flash        | visual       |  99.50% |  88.60%  |  81.40%  |       53.90%      |       67.90%      |       56.90%      |  56.50%  |  44.20% |       82.10%      |       58.10%      |       45.80%      |  66.81% |
-|                         | fusion       | 99.60%<span style="color: green;">↑</span> |  95.20%<span style="color: green;">↑</span> |  84.00%<span style="color: green;">↑</span> |      58.40%<span style="color: green;">↑</span>      |      73.00%<span style="color: green;">↑</span>      |      61.40%<span style="color: green;">↑</span>      |  64.90%<span style="color: green;">↑</span> | 52.60%<span style="color: green;">↑</span> |      84.30%<span style="color: green;">↑</span>      |      65.80%<span style="color: green;">↑</span>      |      46.70%<span style="color: green;">↑</span>      | 71.45%<span style="color: green;">↑</span> |
-|                         | compensation | 99.90%<span style="color: green;">↑</span> |  94.90%<span style="color: green;">↑</span> |  75.10%<span style="color: red;">↓</span> |      51.50%<span style="color: red;">↓</span>      |      61.80%<span style="color: red;">↓</span>      |      58.30%<span style="color: red;">↓</span>      |  55.20%<span style="color: red;">↓</span> | 43.20%<span style="color: red;">↓</span> |      75.60%<span style="color: red;">↓</span>      |      55.40%<span style="color: red;">↓</span>      |      32.60%<span style="color: red;">↓</span>      | 63.95%<span style="color: red;">↓</span> |
+<table class="tg" style="undefined;table-layout: fixed; width: 1474px"><colgroup>
+<col style="width: 164px">
+<col style="width: 98px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+<col style="width: 101px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-larh" rowspan="2">MLLMs</th>
+    <th class="tg-larh" rowspan="2">Eaperiment</th>
+    <th class="tg-larh">CTR</th>
+    <th class="tg-larh">VEC</th>
+    <th class="tg-larh">SRP</th>
+    <th class="tg-larh">VPR</th>
+    <th class="tg-larh">VE</th>
+    <th class="tg-larh">EVJ</th>
+    <th class="tg-larh">SC</th>
+    <th class="tg-larh">NF</th>
+    <th class="tg-larh">NC</th>
+    <th class="tg-larh">MSR</th>
+    <th class="tg-larh">VA</th>
+    <th class="tg-larh" rowspan="2">Average</th>
+  </tr>
+  <tr>
+    <th class="tg-larh"><em>T<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>M<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+    <th class="tg-larh"><em>T<sub>acc</sub>/R<sub>acc</sub></em></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-larh" colspan="14">open-source models</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">CogVLM2</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">5.80%</td>
+    <td class="tg-49iy">15.30%</td>
+    <td class="tg-49iy">16.20%</td>
+    <td class="tg-49iy">7.30%</td>
+    <td class="tg-49iy">7.00%</td>
+    <td class="tg-49iy">5.20%</td>
+    <td class="tg-49iy">2.90%</td>
+    <td class="tg-49iy">4.50%</td>
+    <td class="tg-49iy">35.90%</td>
+    <td class="tg-49iy">5.80%</td>
+    <td class="tg-49iy">11.40%</td>
+    <td class="tg-49iy">10.66%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">LLaVA 1.5</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">9.70%</td>
+    <td class="tg-49iy">49.70%</td>
+    <td class="tg-49iy">13.60%</td>
+    <td class="tg-49iy">2.30%</td>
+    <td class="tg-49iy">2.00%</td>
+    <td class="tg-49iy">1.80%</td>
+    <td class="tg-49iy">2.10%</td>
+    <td class="tg-49iy">2.70%</td>
+    <td class="tg-49iy">37.70%</td>
+    <td class="tg-49iy">3.90%</td>
+    <td class="tg-49iy">7.40%</td>
+    <td class="tg-49iy">12.08%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">DeepSeek-VL2 </td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">85.80%</td>
+    <td class="tg-49iy">74.80%</td>
+    <td class="tg-49iy">52.90%</td>
+    <td class="tg-49iy">31.00%</td>
+    <td class="tg-49iy">40.50%</td>
+    <td class="tg-49iy">32.70%</td>
+    <td class="tg-49iy">11.90%</td>
+    <td class="tg-49iy">16.00%</td>
+    <td class="tg-49iy">49.30%</td>
+    <td class="tg-49iy">19.20%</td>
+    <td class="tg-49iy">28.30%</td>
+    <td class="tg-49iy">40.22%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">InternVL3</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">75.90%</td>
+    <td class="tg-49iy">84.10%</td>
+    <td class="tg-49iy">57.10%</td>
+    <td class="tg-49iy">29.59%</td>
+    <td class="tg-49iy">58.10%</td>
+    <td class="tg-49iy">45.70%</td>
+    <td class="tg-49iy">35.40%</td>
+    <td class="tg-49iy">21.50%</td>
+    <td class="tg-49iy">64.60%</td>
+    <td class="tg-49iy">22.60%</td>
+    <td class="tg-49iy">27.80%</td>
+    <td class="tg-49iy">47.49%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">76.50%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">75.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">4.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">10.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">5.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">40.70%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">18.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">49.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">4.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">1.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">28.04%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">88.10%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">88.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">50.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">23.3%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">75.20%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">48.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">55.80%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">17.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">63.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">8.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">45.50%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">51.10%<span style="color: green;">↑</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">LLaMA4 Maverick</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">84.90%</td>
+    <td class="tg-49iy">73.60%</td>
+    <td class="tg-49iy">46.30%</td>
+    <td class="tg-49iy">56.80%</td>
+    <td class="tg-49iy">49.70%</td>
+    <td class="tg-49iy">47.50%</td>
+    <td class="tg-49iy">28.40%</td>
+    <td class="tg-49iy">71.60%</td>
+    <td class="tg-49iy">39.10%</td>
+    <td class="tg-49iy">38.80%</td>
+    <td class="tg-49iy">57.88%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">84.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">48.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">23.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">25.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">19.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">10.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">56.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">19.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">19.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">39.24%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">86.30%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">63.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">36.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">41.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">18.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">62.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">30.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">48.48%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">Qwen2.5-VL-32B</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">99.10%</td>
+    <td class="tg-49iy">84.90%</td>
+    <td class="tg-49iy">69.60%</td>
+    <td class="tg-49iy">40.60%</td>
+    <td class="tg-49iy">53.90%</td>
+    <td class="tg-49iy">45.10%</td>
+    <td class="tg-49iy">37.20%</td>
+    <td class="tg-49iy">24.40%</td>
+    <td class="tg-49iy">64.60%</td>
+    <td class="tg-49iy">36.10%</td>
+    <td class="tg-49iy">36.40%</td>
+    <td class="tg-49iy">53.81%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">99.10%</td>
+    <td class="tg-49iy">84.90%</td>
+    <td class="tg-49iy">68.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">48.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">43.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">33.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">21.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">63.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">34.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">51.71%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.10%</td>
+    <td class="tg-49iy">81.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">57.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">27.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">37.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">33.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">25.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">14.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">56.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">25.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">29.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">44.45%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">Qwen2.5-VL-72B</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">99.80%</td>
+    <td class="tg-49iy">85.00%</td>
+    <td class="tg-49iy">69.50%</td>
+    <td class="tg-49iy">39.80%</td>
+    <td class="tg-49iy">58.50%</td>
+    <td class="tg-49iy">47.00%</td>
+    <td class="tg-49iy">43.30%</td>
+    <td class="tg-49iy">23.80%</td>
+    <td class="tg-49iy">67.80%</td>
+    <td class="tg-49iy">37.30%</td>
+    <td class="tg-49iy">34.30%</td>
+    <td class="tg-49iy">55.10%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">99.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">86.70%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">66.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">36.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">52.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">44.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">37.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">20.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">64.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">34.60%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">52.35%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">84.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">57.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">26.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">35.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">27.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">13.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">58.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">25.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">28.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">44.95%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-larh" colspan="14">closed-source models</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">Claude 3.5 Haiku</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">85.20%</td>
+    <td class="tg-49iy">67.10%</td>
+    <td class="tg-49iy">40.00%</td>
+    <td class="tg-49iy">53.40%</td>
+    <td class="tg-49iy">46.50%</td>
+    <td class="tg-49iy">33.90%</td>
+    <td class="tg-49iy">23.00%</td>
+    <td class="tg-49iy">65.60%</td>
+    <td class="tg-49iy">32.30%</td>
+    <td class="tg-49iy">32.50%</td>
+    <td class="tg-49iy">52.68%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">87.80%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">65.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">51.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">45.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">31.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">62.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">33.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">29.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">51.60%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">91.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">57.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">27.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">37.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">40.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">18.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">56.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">28.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">24.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">45.77%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">GLM-4V-Plus</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">99.90%</td>
+    <td class="tg-49iy">85.50%</td>
+    <td class="tg-49iy">73.70%</td>
+    <td class="tg-49iy">47.00%</td>
+    <td class="tg-49iy">63.80%</td>
+    <td class="tg-49iy">53.30%</td>
+    <td class="tg-49iy">45.00%</td>
+    <td class="tg-49iy">27.30%</td>
+    <td class="tg-49iy">76.20%</td>
+    <td class="tg-49iy">42.30%</td>
+    <td class="tg-49iy">40.20%</td>
+    <td class="tg-49iy">59.47%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">99.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">81.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">62.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">46.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">42.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">33.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">18.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">68.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">35.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">50.90%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">80.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">54.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">31.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">35.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">28.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">16.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">63.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">28.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">27.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">45.64%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">Doubao 1.5   Vision-Pro</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">86.00%</td>
+    <td class="tg-49iy">75.60%</td>
+    <td class="tg-49iy">44.20%</td>
+    <td class="tg-49iy">63.10%</td>
+    <td class="tg-49iy">48.80%</td>
+    <td class="tg-49iy">41.30%</td>
+    <td class="tg-49iy">35.20%</td>
+    <td class="tg-49iy">72.60%</td>
+    <td class="tg-49iy">42.20%</td>
+    <td class="tg-49iy">46.30%</td>
+    <td class="tg-49iy">59.57%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">87.20%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">73.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">44.90%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">60.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">51.30%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">38.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">34.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">71.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">36.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">43.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">58.40%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.7%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">85.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">61.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">42.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">23.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">21.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">58.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">23.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">46.41%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">GPT-4o</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">89.40%</td>
+    <td class="tg-49iy">80.90%</td>
+    <td class="tg-49iy">55.10%</td>
+    <td class="tg-49iy">77.80%</td>
+    <td class="tg-49iy">59.20%</td>
+    <td class="tg-49iy">61.00%</td>
+    <td class="tg-49iy">41.70%</td>
+    <td class="tg-49iy">77.10%</td>
+    <td class="tg-49iy">52.40%</td>
+    <td class="tg-49iy">44.90%</td>
+    <td class="tg-49iy">67.23%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">90.50%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">80.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">57.49%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">70.70%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">55.00%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">56.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">39.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">74.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">54.50%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">35.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">64.91%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">100.00%</td>
+    <td class="tg-49iy">87.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">70.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">45.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">52.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">47.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">44.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">31.90%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">67.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">38.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">22.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">55.31%<span style="color: red;">↓</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0" rowspan="3">Gemini 2.5 Flash</td>
+    <td class="tg-vml0">visual</td>
+    <td class="tg-49iy">99.50%</td>
+    <td class="tg-49iy">88.60%</td>
+    <td class="tg-49iy">81.40%</td>
+    <td class="tg-49iy">53.90%</td>
+    <td class="tg-49iy">67.90%</td>
+    <td class="tg-49iy">56.90%</td>
+    <td class="tg-49iy">56.50%</td>
+    <td class="tg-49iy">44.20%</td>
+    <td class="tg-49iy">82.10%</td>
+    <td class="tg-49iy">58.10%</td>
+    <td class="tg-49iy">45.80%</td>
+    <td class="tg-49iy">66.81%</td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">fusion</td>
+    <td class="tg-49iy">99.60%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">95.20%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">84.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">58.40%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">73.00%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">61.40%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">64.90%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">52.60%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">84.30%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">65.80%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">46.70%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">71.45%<span style="color: green;">↑</span></td>
+  </tr>
+  <tr>
+    <td class="tg-vml0">compensation</td>
+    <td class="tg-49iy">99.90%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">94.90%<span style="color: green;">↑</span></td>
+    <td class="tg-49iy">75.10%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">51.50%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">61.80%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">58.30%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">55.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">43.20%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">75.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">55.40%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">32.60%<span style="color: red;">↓</span></td>
+    <td class="tg-49iy">63.95%<span style="color: red;">↓</span></td>
+  </tr>
+</tbody></table>
 
 
 ## Citation
