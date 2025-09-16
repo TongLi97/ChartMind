@@ -32,6 +32,12 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 ## Evaluation Results
 
 ### Multimodal Evaluations
+To evaluate the multimodal reasoning capabilities of MLLMs, we design three experimental configurations:
+
+- **Visual**: Chart image + question → answer + reasoning (baseline)
+- **Fusion**: Chart image + SVG + question → answer + reasoning  
+- **Compensation**: Degraded chart image + SVG + question → answer + reasoning
+
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1474px"><colgroup>
 <col style="width: 164px">
@@ -552,6 +558,7 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 </div>
 
 ### Degradation and Compensation Evaluation
+This section presents fine-grained degradation and compensation question-answering statistics. Performance changes exceeding 5% are highlighted.
 
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1108px"><colgroup>
