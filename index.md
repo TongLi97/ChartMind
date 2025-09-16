@@ -29,9 +29,20 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 - **Numerical Analysis** - numerical extraction (NE), extremum value judgment (EVJ), statistical computation (SC), numerical filtering (NF), and numerical comparison (NC)
 - **Logical Reasoning** - multi-step reasoning (MSR) and visual analysis (VA)
 
-## Evaluation Results
+## Evaluation Space
 
-### Multimodal Evaluations
+### Evaluation Metrics
+
+We employ six key metrics to comprehensively assess model performance:
+
+- **TightAcc (T<sub>acc</sub>)**: Exact keyword matching between model answers and ground truth for strict factual accuracy assessment.
+- **RelaxAcc (R<sub>acc</sub>)**: Numerical accuracy with 5% error tolerance to account for unit conversion and precision variations.
+- **MixAcc (M<sub>acc</sub>)**: Multiplicative combination of TightAcc and RelaxAcc for answers containing both textual and numerical elements.
+- **Inference Time**: Time cost (in seconds) from input reception to answer generation.
+- **Reasoning Tokens**: Token count in the model's explicit reasoning trace, reflecting thinking expansion degree.
+- **Reasoning Drift**: Semantic deviation from question-answering context, measured using Sentence-BERT similarity between reasoning units and task context.
+
+### Multimodal Evaluation
 To evaluate the multimodal reasoning capabilities of MLLMs, we design three experimental configurations:
 
 - **Visual**: Chart image + question → answer + reasoning (baseline)
