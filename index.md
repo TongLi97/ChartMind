@@ -553,8 +553,9 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 
 ### Degradation and Compensation Evaluation
 
+<div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1108px"><colgroup>
-<col style="width: 140px">
+<col style="width: 164px">
 <col style="width: 121px">
 <col style="width: 121px">
 <col style="width: 121px">
@@ -666,6 +667,7 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
     <td class="tg-sqna"></td>
   </tr>
 </tbody></table>
+</div>
 
 
 ## Citation
