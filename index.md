@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="assets/css/custom.css">
+
 # ChartMind <img src="images/chartMind.png" width="32" height="32" style="vertical-align: middle;">: Benchmark and Reasoning Insights of Multimodal Chart Question Answering
 
 **Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang, Ronghua Liang**
