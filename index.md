@@ -704,8 +704,6 @@ Degradation degree and question-answering accuracy statistics:
 ## Reasoning Instances and Deconstruction
 We employ a Test-Time Scaling-based framework to achieve fine-grained deconstruction of reasoning traces, analyzing both modality classification and chart component evidence dependencies in MLLM reasoning processes.
 
-### Reasoning Instances
-
 **Positive Reasoning Instances**:
 
 <div style="text-align: center; margin: 40px 0;">
@@ -717,8 +715,6 @@ We employ a Test-Time Scaling-based framework to achieve fine-grained deconstruc
 <div style="text-align: center; margin: 40px 0;">
 <img src="images/negative_examples.png" alt="CV Overview" style="max-width: 85%; height: auto;">
 </div>
-
-### Reasoning Deconstruction Analysis
 
 **Modality Activation Frequency and Temporal Patterns**:
 
