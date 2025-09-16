@@ -701,5 +701,45 @@ Degradation degree and question-answering accuracy statistics:
 <img src="images/degraded_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
 </div>
 
+## Reasoning Instances and Deconstruction
+We employ a Test-Time Scaling-based framework to achieve fine-grained deconstruction of reasoning traces, analyzing both modality classification and chart component evidence dependencies in MLLM reasoning processes.
+
+### Reasoning Instances
+
+**Positive Reasoning Instances**:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/positivate_examples.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
+
+**Negative Reasoning Instances**:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/negative_examples.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
+
+### Reasoning Deconstruction Analysis
+
+**Modality Activation Frequency and Temporal Patterns**:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/reasoning_unit_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
+
+**Chart Component Dependency Patterns**:
+
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/reasoning_elements.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
 
 ## Citation
+
+If you find this work useful for your research, please cite our paper:
+```bibtex
+@article{ChartMind2025,
+    title={ChartMind: Benchmark and Reasoning Insights of Multimodal Chart Question Answering},
+    author={Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang and Ronghua Liang},
+    year={2025}
+}
+```
+For questions about this work, please contact: Tong Li (litong@zjut.edu.cn, https://tongli97.github.io/)
