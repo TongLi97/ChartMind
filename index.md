@@ -31,6 +31,7 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 
 ## Evaluation Results
 
+<div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1474px"><colgroup>
 <col style="width: 164px">
 <col style="width: 98px">
@@ -547,6 +548,7 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
     <td class="tg-49iy">63.95%<span style="color: red;">↓</span></td>
   </tr>
 </tbody></table>
+</div>
 
 
 ## Citation
