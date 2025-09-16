@@ -52,7 +52,7 @@ To evaluate the multimodal reasoning capabilities of MLLMs, we design three expe
 - **Compensation**: Degraded chart image + SVG + question → answer + reasoning
 
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
-<table class="tg" style="undefined;table-layout: fixed; width: 1600px"><colgroup>
+<table class="tg" style="undefined;table-layout: fixed; width: 1500px"><colgroup>
 <col style="width: 164px">
 <col style="width: 98px">
 <col style="width: 101px">
@@ -580,7 +580,7 @@ Statistical analysis based on the coefficient of variation:
 This section presents fine-grained degradation and compensation question-answering statistics. Performance changes exceeding 5% are highlighted.
 
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
-<table class="tg" style="undefined;table-layout: fixed; width: 1600px"><colgroup>
+<table class="tg" style="undefined;table-layout: fixed; width: 1500px"><colgroup>
 <col style="width: 164px">
 <col style="width: 121px">
 <col style="width: 121px">
