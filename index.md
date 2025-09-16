@@ -31,7 +31,7 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 - **Numerical Analysis** - numerical extraction (NE), extremum value judgment (EVJ), statistical computation (SC), numerical filtering (NF), and numerical comparison (NC)
 - **Logical Reasoning** - multi-step reasoning (MSR) and visual analysis (VA)
 
-## Evaluation Space
+## ChartMind Evaluation Space
 
 ### Evaluation Metrics
 
