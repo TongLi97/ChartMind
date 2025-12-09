@@ -1,25 +1,29 @@
 <link rel="stylesheet" href="assets/css/custom.css">
 
-# ChartMind <img src="images/chartMind.png" width="32" height="32" style="vertical-align: middle;">: Benchmark and Reasoning Insights of Multimodal Chart Question Answering
+# ChartMind <img src="images/chartMind.png" width="32" height="32" style="vertical-align: middle;">: Benchmark and Deconstruction for Multimodal Chart Reasoning
 
 **<span style="color: #2174A8;">Tong Li</span><sup>†</sup>, <span style="color: #2174A8;">Guodao Sun</span><sup>†</sup>, <span style="color: #2174A8;">Shunkai Wang</span><sup>†</sup>, <span style="color: #2174A8;">Zuoyu Tang</span><sup>†</sup>, <span style="color: #2174A8;">Yang Shu</span><sup>†</sup>, <span style="color: #2174A8;">Xueqian Zheng</span><sup>†</sup>, <span style="color: #2174A8;">Zhentao Zheng</span><sup>†</sup>, <span style="color: #2174A8;">Qi Jiang</span><sup>‡</sup>, <span style="color: #2174A8;">Haixia Wang</span><sup>†</sup>, <span style="color: #2174A8;">Ronghua Liang</span><sup>‡</sup>**
 
 <sup>†</sup>Zhejiang University of Technology <sup>‡</sup>Zhejiang University of Science and Technology 
 
 <div style="text-align: center; margin: 30px 0;">
-  <a href="#" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📑 Paper</a>
-  <a href="#" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">⭐ Code</a>
-  <a href="https://huggingface.co/datasets/guodaosun/Mega60k" style="background-color: #2174A8; color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">🧱 Dataset</a>
+  <a href="#" style="background-color: #2174A8;
+color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">📑 Paper</a>
+  <a href="#" style="background-color: #2174A8;
+color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">⭐ Code</a>
+  <a href="https://huggingface.co/datasets/guodaosun/Mega60k" style="background-color: #2174A8;
+color: white; padding: 8px 16px; margin: 0 8px; text-decoration: none; border-radius: 5px; display: inline-block;">🧱 Dataset</a>
 </div>
 
-<div style="text-align: center; margin: 40px 0;">
+<div style="text-align: center;
+margin: 40px 0;">
 <img src="images/cover.png" alt="ChartMind Overview" style="max-width: 85%; height: auto;">
 </div>
 
 ## Abstract
-Existing ChartQA evaluations for multimodal large language models focuses on visual-only input, and rely solely on "black-box" accuracy metrics, offering limited insight into reasoning traces. To fill these gaps, we introduce Mega60k, a benchmark covering 21 chart types and 11 QA tasks; collect ChartQA reasoning traces from MLLMs; and propose the reasoning deconstruction framework to parse multimodal activation patterns and reasoning evidence usage. Evaluating 12 representative MLLMs (7 open-source and 5 closed-source) under three conditions—visual-only, multimodal fusion, and multimodal compensation—reveals key findings: High-level tasks (multi-step logic, visual pattern recognition, layout optimization) serve as gold-standard for distinguishing MLLMs; Mere modality stacking struggles to extend reasoning boundaries but shows compensatory potential in quantitative visual understanding tasks; Gemini 2.5 Flash and GPT-4o demonstrate positive signals in leveraging structured modality reasoning to mitigate visual degradation such as omissions, occlusion, blurring, and rotation.
+Existing MLLMs chart reasoning evaluations are limited to single visual inputs and “black-box” metrics, lacking “white-box” analysis of thinking processes and reasoning patterns. To alleviate this, we present Mega60K, a benchmark covering 21 chart types and 11 question-answer tasks, enriched with reasoning traces. We further introduce the reasoning deconstruction framework to quantify multimodal activation strategies. Additionally, we conduct the reasoning paradigm transfer experiment to explore logic alignment via reasoning supervision. Evaluations across 12 representative MLLMs under three reasoning settings—visual-only, multimodal fusion, and multimodal compensation—yield the following insights: High-level reasoning tasks (e.g., multi-step logic, pattern recognition, layout optimization) serve as gold-standard for distinguishing MLLMs; Naive modality stacking offers limited reasoning gains, while structured modalities yield measurable compensatory effects in quantitative tasks under visual degradation. Reasoning paradigm transfer improves the student model (Qwen2.5-VL-7B) by 18.77% in reasoning accuracy and enables alignment with the teacher model’s (Gemini 2.5 Flash) reasoning style.
 
-## Mega60k Overview
+## Mega60k Dataset Overview 📊
 
 ### 21 Chart Types
 <div style="text-align: center; margin: 30px 0;">
@@ -27,29 +31,28 @@ Existing ChartQA evaluations for multimodal large language models focuses on vis
 </div>
 
 ### 11 Question Tasks
-- **Visual Understanding** - chart type recognition (CTR), visual element counting (VEC), spatial relation perception (SRP), and visual pattern recognition (VPR)
-- **Numerical Analysis** - numerical extraction (NE), extremum value judgment (EVJ), statistical computation (SC), numerical filtering (NF), and numerical comparison (NC)
-- **Logical Reasoning** - multi-step reasoning (MSR) and visual analysis (VA)
+- **Visual Understanding (4 Tasks)** 👁️ - chart type recognition (CTR), visual element counting (VEC), spatial relation perception (SRP), and visual pattern recognition (VPR)
+- **Numerical Analysis (5 Tasks)** 🔢 - numerical extraction (NE), extremum value judgment (EVJ), statistical computation (SC), numerical filtering (NF), and numerical comparison (NC)
+- **Logical Reasoning (2 Tasks)** 💡 - multi-step reasoning (MSR) and visual analysis (VA)
 
-## ChartMind Evaluation Space
+## ChartMind Evaluation Space 📈
 
 ### Evaluation Metrics
-
 We employ six key metrics to comprehensively assess model performance:
 
-- **TightAcc (T<sub>acc</sub>)**: Exact keyword matching between model answers and ground truth for strict factual accuracy assessment.
-- **RelaxAcc (R<sub>acc</sub>)**: Numerical accuracy with 5% error tolerance to account for unit conversion and precision variations.
-- **MixAcc (M<sub>acc</sub>)**: Multiplicative combination of TightAcc and RelaxAcc for answers containing both textual and numerical elements.
-- **Inference Time**: Time cost (in seconds) from input reception to answer generation.
-- **Reasoning Tokens**: Token count in the model's explicit reasoning trace, reflecting thinking expansion degree.
-- **Reasoning Drift**: Semantic deviation from question-answering context, measured using Sentence-BERT similarity between reasoning units and task context.
+- **TightAcc (T<sub>acc</sub>):** Exact keyword matching between model answers and ground truth for strict factual accuracy assessment.
+- **RelaxAcc (R<sub>acc</sub>):** Numerical accuracy with 5% error tolerance to account for unit conversion and precision variations.
+- **MixAcc (M<sub>acc</sub>):** Multiplicative combination of TightAcc and RelaxAcc for answers containing both textual and numerical elements.
+- **Inference Time:** Time cost (in seconds) from input reception to answer generation.
+- **Reasoning Tokens:** Token count in the model's explicit reasoning trace, reflecting thinking expansion degree.
+- **Reasoning Drift:** Semantic deviation from question-answering context, measured using Sentence-BERT similarity between reasoning units and task context.
 
-### Multimodal Evaluation
+### Benchmarking Configurations
 To evaluate the multimodal reasoning capabilities of MLLMs, we design three experimental configurations:
 
-- **Visual**: Chart image + question → answer + reasoning (baseline)
-- **Fusion**: Chart image + SVG + question → answer + reasoning  
-- **Compensation**: Degraded chart image + SVG + question → answer + reasoning
+- **Visual (Baseline):** Chart image + question → answer + reasoning 
+- **Fusion:** Chart image + SVG + question → answer + reasoning  
+- **Compensation:** Degraded chart image + SVG + question → answer + reasoning
 
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1500px"><colgroup>
@@ -570,16 +573,11 @@ To evaluate the multimodal reasoning capabilities of MLLMs, we design three expe
 </tbody></table>
 </div>
 
-Statistical analysis based on the coefficient of variation:
-
-<div style="text-align: center; margin: 40px 0;">
-<img src="images/coefficient_of_variation.png" alt="CV Overview" style="max-width: 85%; height: auto;">
-</div>
-
-### Degradation and Compensation Evaluation
+### Degradation and Compensation Reasoning
 This section presents fine-grained degradation and compensation question-answering statistics. Performance changes exceeding 5% are highlighted.
 
-<div style="overflow: auto; max-width: 100%; max-height: 600px;">
+<div style="overflow: auto;
+max-width: 100%; max-height: 600px;">
 <table class="tg" style="undefined;table-layout: fixed; width: 1500px"><colgroup>
 <col style="width: 164px">
 <col style="width: 121px">
@@ -695,47 +693,120 @@ This section presents fine-grained degradation and compensation question-answeri
 </tbody></table>
 </div>
 
-Degradation degree and question-answering accuracy statistics:
-
-<div style="text-align: center; margin: 40px 0;">
+<div style="text-align: center;
+margin: 40px 0;">
 <img src="images/degraded_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
 </div>
 
-## Reasoning Instances and Deconstruction
-We employ a Test-Time Scaling-based framework to achieve fine-grained deconstruction of reasoning traces, analyzing both modality classification and chart component evidence dependencies in MLLM reasoning processes.
+### Reasoning Instances: Qualitative Analysis 🔎
 
-**Positive Reasoning Instances**:
+To supplement the quantitative metrics, we conduct a **qualitative analysis** of explicit reasoning traces. We contrast successful alignment examples with failure cases to illustrate the spectrum of MLLM reasoning capabilities and pinpoint common modes of error, such as semantic drift and hallucination.
 
+#### Positive Reasoning Instances
 <div style="text-align: center; margin: 40px 0;">
-<img src="images/positivate_examples.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+<img src="images/positivate_examples.png" alt="Successful reasoning traces demonstrating correct logical alignment and evidence utilization." style="max-width: 85%; height: auto;">
 </div>
 
-**Negative Reasoning Instances**:
-
+#### Negative Reasoning Instances
 <div style="text-align: center; margin: 40px 0;">
-<img src="images/negative_examples.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+<img src="images/negative_examples.png" alt="Negative reasoning traces illustrating semantic drift and hallucination." style="max-width: 85%; height: auto;">
 </div>
 
-**Modality Activation Frequency and Temporal Patterns**:
+## Reasoning Deconstruction, Analysis and Transfer
 
-<div style="text-align: center; margin: 40px 0;">
-<img src="images/reasoning_unit_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+### Reasoning Experiment
+For deconstructor selection, we compared five representative models covering two mainstream architectures: traditional neural network models (DistilBERT, RoBERTa) and large language models (Llama-4-Scout-17B, Qwen3-32B, DeepSeek-R1).
+
+* **传统模型 (Traditional Models):** 🤖
+    Modeled as **text classification problems** (e.g., 4-class classification for reasoning unit parsing, multi-label classification for chart element parsing).
+
+* **大语言模型 (LLMs):** ✨
+    Utilize a **prompt-driven deconstruction approach** combined with the **Test-Time Scaling (TTS) strategy** (performing 5 rounds of sampling with Self-Consistency aggregation).
+
+The experimental results (Table 1) show that traditional models excel in computational efficiency ($time < 0.5s$, no API cost) but exhibit lower deconstruction accuracy ($\mathcal{U}_{\text{Acc}}$ only up to $63.04\%$). In contrast, the three LLMs show superior accuracy ($\mathcal{U}_{\text{Acc}} > 72\%$, $\mathcal{E}_{\text{Acc}} \approx 80\%$). **DeepSeek-R1-Distill-Qwen-32B** is ultimately selected as the formal deconstructor due to its best cost-performance ratio.
+
+<div style="overflow: auto; max-width: 100%; max-height: 600px;">
+<table style="table-layout: fixed; width: 100%; border-collapse: collapse;">
+<thead>
+  <tr style="border-top: 2px solid #333; border-bottom: 1px solid #ddd;">
+    <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="2" rowspan="2">Methods</th>
+    <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="5">Evaluation Metrics</th>
+    <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="2">TTS Metrics</th>
+  </tr>
+  <tr style="border-bottom: 2px solid #333;">
+    <th style="padding: 8px; text-align: center;">$\mathcal{U}_{\text{Acc}}$</th>
+    <th style="padding: 8px; text-align: center;">$\mathcal{E}_{\text{Acc}}$</th>
+    <th style="padding: 8px; text-align: center;">time (s)</th>
+    <th style="padding: 8px; text-align: center;">$\mathcal{M}_\Delta$ (MB)</th>
+    <th style="padding: 8px; text-align: center;">tokens (k)</th>
+    <th style="padding: 8px; text-align: center;">Pass@1</th>
+    <th style="padding: 8px; text-align: center;">Cons@5</th>
+  </tr>
+</thead>
+<tbody>
+  <tr style="border-top: 1px solid #ddd;">
+    <td style="padding: 8px; font-weight: bold;" rowspan="2">Traditional</td>
+    <td style="padding: 8px;">DistilBERT</td>
+    <td style="padding: 8px; text-align: center;">16.35%</td>
+    <td style="padding: 8px; text-align: center;">66.95%</td>
+    <td style="padding: 8px; text-align: center;">0.22</td>
+    <td style="padding: 8px; text-align: center;">0.63</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+  </tr>
+  <tr style="border-bottom: 1px solid #eee;">
+    <td style="padding: 8px;">RoBERTa</td>
+    <td style="padding: 8px; text-align: center;">63.04%</td>
+    <td style="padding: 8px; text-align: center;">60.40%</td>
+    <td style="padding: 8px; text-align: center;">0.45</td>
+    <td style="padding: 8px; text-align: center;">1.18</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+  </tr>
+  <tr style="border-top: 1px solid #ddd;">
+    <td style="padding: 8px; font-weight: bold;" rowspan="3">LLMs</td>
+    <td style="padding: 8px;">Llama-4-Scout-17B-16E-Instruct</td>
+    <td style="padding: 8px; text-align: center;">72.44%</td>
+    <td style="padding: 8px; text-align: center;">78.13%</td>
+    <td style="padding: 8px; text-align: center;">10.25</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">2.77</td>
+    <td style="padding: 8px; text-align: center;">0.780</td>
+    <td style="padding: 8px; text-align: center;">0.780</td>
+  </tr>
+  <tr>
+    <td style="padding: 8px;">Qwen3-32B</td>
+    <td style="padding: 8px; text-align: center;">72.47%</td>
+    <td style="padding: 8px; text-align: center;">79.65%</td>
+    <td style="padding: 8px; text-align: center;">14.91</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">2.84</td>
+    <td style="padding: 8px; text-align: center;">0.784</td>
+    <td style="padding: 8px; text-align: center;">0.783</td>
+  </tr>
+  <tr style="border-bottom: 2px solid #333;">
+    <td style="padding: 8px;">DeepSeek-R1-Distill-Qwen-32B (adopted)</td>
+    <td style="padding: 8px; text-align: center;">72.14%</td>
+    <td style="padding: 8px; text-align: center;">80.69%</td>
+    <td style="padding: 8px; text-align: center;">14.23</td>
+    <td style="padding: 8px; text-align: center;">--</td>
+    <td style="padding: 8px; text-align: center;">2.84</td>
+    <td style="padding: 8px; text-align: center;">0.790</td>
+    <td style="padding: 8px; text-align: center;">0.784</td>
+  </tr>
+</tbody>
+</table>
 </div>
 
-**Chart Component Dependency Patterns**:
-
-<div style="text-align: center; margin: 40px 0;">
-<img src="images/reasoning_elements.png" alt="CV Overview" style="max-width: 85%; height: auto;">
-</div>
 
 ## Citation
 
 If you find this work useful for your research, please cite our paper:
 ```bibtex
 @article{ChartMind2025li,
-    title={ChartMind: Benchmark and Reasoning Insights of Multimodal Chart Question Answering},
-    author={Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Haixia Wang and Ronghua Liang},
+    title={ChartMind: Benchmark and Deconstruction for Multimodal Chart Reasoning},
+    author={Tong Li, Guodao Sun, Shunkai Wang, Zuoyu Tang, Yang Shu, Xueqian Zheng, Zhentao Zheng, Qi Jiang, Haixia Wang and Ronghua Liang},
     year={2025}
 }
-```
-For questions about this work, please contact: Tong Li (litong@zjut.edu.cn, https://tongli97.github.io/)
