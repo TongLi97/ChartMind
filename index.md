@@ -734,10 +734,10 @@ The experimental results (Table 1) show that traditional models excel in computa
     <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="2">TTS Metrics</th>
   </tr>
   <tr style="border-bottom: 1px solid #333;">
-    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">$\mathcal{U}_{\text{Acc}}$</th>
-    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">$\mathcal{E}_{\text{Acc}}$</th>
+    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">&#x1D54C;<sub>Acc</th>
+    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">&#8496;<sub>Acc</sub></th>
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">time (s)</th>
-    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">$\mathcal{M}_\Delta$ (MB)</th>
+    <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">&#x1D540;<sub>&#x394 (MB)</th>
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">tokens (k)</th>
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">Pass@1</th>
     <th style="padding: 8px; text-align: center;">Cons@5</th>
