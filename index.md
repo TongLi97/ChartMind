@@ -2,7 +2,7 @@
 
 # ChartMind <img src="images/chartMind.png" width="32" height="32" style="vertical-align: middle;">: Benchmark and Reasoning Insights of Multimodal Chart Question Answering
 
-**<span style="color: #2174A8;">Tong Li</span><sup>†</sup>, <span style="color: #2174A8;">Guodao Sun</span><sup>†</sup>, <span style="color: #2174A8;">Shunkai Wang</span><sup>†</sup>, <span style="color: #2174A8;">Zuoyu Tang</span><sup>†</sup>, <span style="color: #2174A8;">Yang Shu</span><sup>†</sup>, <span style="color: #2174A8;">Xueqian Zheng</span><sup>†</sup>, <span style="color: #2174A8;">Haixia Wang</span><sup>†</sup>, <span style="color: #2174A8;">Ronghua Liang</span><sup>‡</sup>**
+**<span style="color: #2174A8;">Tong Li</span><sup>†</sup>, <span style="color: #2174A8;">Guodao Sun</span><sup>†</sup>, <span style="color: #2174A8;">Shunkai Wang</span><sup>†</sup>, <span style="color: #2174A8;">Zuoyu Tang</span><sup>†</sup>, <span style="color: #2174A8;">Yang Shu</span><sup>†</sup>, <span style="color: #2174A8;">Xueqian Zheng</span><sup>†</sup>, <span style="color: #2174A8;">Zhentao Zheng</span><sup>†</sup>, <span style="color: #2174A8;">Qi Jiang</span><sup>‡</sup>, <span style="color: #2174A8;">Haixia Wang</span><sup>†</sup>, <span style="color: #2174A8;">Ronghua Liang</span><sup>‡</sup>**
 
 <sup>†</sup>Zhejiang University of Technology <sup>‡</sup>Zhejiang University of Science and Technology 
 
