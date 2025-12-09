@@ -728,7 +728,7 @@ The experimental results (Table 1) show that traditional models excel in computa
 <div style="overflow: auto; max-width: 100%; max-height: 600px;">
 <table style="table-layout: fixed; width: 100%; border-collapse: collapse;">
 <thead>
-  <tr style="border-top: 2px solid #333; border-bottom: 1px solid #ddd;">
+  <tr style="border-top: 1px solid #333; border-bottom: 1px solid #ddd;">
     <th style="padding: 8px; text-align: center; font-weight: bold; border-right: 1px solid #ddd;" colspan="2" rowspan="2">Methods</th>
     <th style="padding: 8px; text-align: center; font-weight: bold; border-right: 1px solid #ddd;" colspan="5">Evaluation Metrics</th>
     <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="2">TTS Metrics</th>
@@ -786,7 +786,7 @@ The experimental results (Table 1) show that traditional models excel in computa
     <td style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">0.784</td>
     <td style="padding: 8px; text-align: center;">0.783</td>
   </tr>
-  <tr style="border-bottom: 2px solid #333;">
+  <tr style="border-bottom: 1px solid #333;">
     <td style="padding: 8px; border-right: 1px solid #ddd;">DeepSeek-R1-Distill-Qwen-32B (adopted)</td>
     <td style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">72.14%</td>
     <td style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">80.69%</td>
