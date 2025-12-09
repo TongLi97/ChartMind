@@ -733,7 +733,7 @@ The experimental results (Table 1) show that traditional models excel in computa
     <th style="padding: 8px; text-align: center; font-weight: bold; border-right: 1px solid #ddd;" colspan="5">Evaluation Metrics</th>
     <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="2">TTS Metrics</th>
   </tr>
-  <tr style="border-bottom: 2px solid #333;">
+  <tr style="border-bottom: 1px solid #333;">
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">$\mathcal{U}_{\text{Acc}}$</th>
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">$\mathcal{E}_{\text{Acc}}$</th>
     <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">time (s)</th>
@@ -815,12 +815,12 @@ The table summarizes the substantial performance gains achieved by the student m
 <div style="overflow: auto; max-width: 100%;">
 <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
 <thead>
-    <tr style="border-top: 2px solid #333; border-bottom: 1px solid #ddd;">
+    <tr style="border-top: 1px solid #333; border-bottom: 1px solid #ddd;">
         <th style="padding: 8px; text-align: left; border-right: 1px solid #ddd;" rowspan="2">Chart Type</th>
         <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd; font-weight: bold;" colspan="5">Qwen2.5-VL-7B (Pre-trained)</th>
         <th style="padding: 8px; text-align: center; font-weight: bold;" colspan="5">Qwen2.5-VL-7B (LoRA Fine-tuned)</th>
     </tr>
-    <tr style="border-bottom: 2px solid #333;">
+    <tr style="border-bottom: 1px solid #333;">
         <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;">SRP</th>
         <th style="border-right: 1px solid #ddd;">EVJ</th>
         <th style="border-right: 1px solid #ddd;">SC</th>
