@@ -800,6 +800,161 @@ The experimental results (Table 1) show that traditional models excel in computa
 </table>
 </div>
 
+<div style="text-align: center; margin: 40px 0;">
+<img src="images/reasoning_unit_type.png" alt="CV Overview" style="max-width: 85%; height: auto;">
+</div>
+
+### Reasoning Paradigm Transfer
+
+This section investigates **Reasoning Paradigm Transfer** by validating the efficacy of high-quality reasoning traces as a supervisory signal.
+
+We designate **Gemini 2.5 Flash** (based on its superior performance) as the **Teacher Model**. We then perform supervised fine-tuning on **Qwen2.5-VL-7B** (the **Student Model**) using the **Low-Rank Adaptation (LoRA)** strategy. This aims to align the student model's logical style with the teacher's, enhancing its problem-solving capabilities.
+
+The table below summarizes the substantial performance gains achieved by the student model across tasks and chart types after fine-tuning.
+
+<div style="overflow: auto; max-width: 100%;">
+<table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+<thead>
+    <tr style="border-top: 2px solid #333; border-bottom: 1px solid #ddd;">
+        <th style="padding: 8px; text-align: left; border-right: 1px solid #ddd;" rowspan="2">Chart Type</th>
+        <th style="padding: 8px; text-align: center; border-right: 1px solid #ddd;" colspan="5">Qwen2.5-VL-7B (Pre-trained)</th>
+        <th style="padding: 8px; text-align: center;" colspan="5">Qwen2.5-VL-7B (LoRA Fine-tuned)</th>
+    </tr>
+    <tr style="border-bottom: 2px solid #333;">
+        <th style="padding: 8px; text-align: center;">SRP</th>
+        <th>EVJ</th>
+        <th>SC</th>
+        <th>MSR</th>
+        <th>VA</th>
+        <th>SRP</th>
+        <th>EVJ</th>
+        <th>SC</th>
+        <th>MSR</th>
+        <th>VA</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td style="padding: 8px;">bar</td>
+        <td style="padding: 8px; text-align: center;">90.00%</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+        <td style="padding: 8px; text-align: center;">70.00%</td>
+        <td style="padding: 8px; text-align: center;">90.00%</td>
+        <td style="padding: 8px; text-align: center;">90.00%</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+        <td style="padding: 8px; text-align: center;">65.00%</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">box</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">35.00%</td>
+        <td style="padding: 8px; text-align: center;">40.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">80.00%</td>
+        <td style="padding: 8px; text-align: center;">40.00%</td>
+        <td style="padding: 8px; text-align: center;">55.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">bubble</td>
+        <td style="padding: 8px; text-align: center;">35.00%</td>
+        <td style="padding: 8px; text-align: center;">50.00%</td>
+        <td style="padding: 8px; text-align: center;">25.00%</td>
+        <td style="padding: 8px; text-align: center;">45.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">45.00%</td>
+        <td style="padding: 8px; text-align: center;">50.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">line</td>
+        <td style="padding: 8px; text-align: center;">70.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+        <td style="padding: 8px; text-align: center;">70.00%</td>
+        <td style="padding: 8px; text-align: center;">80.00%</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">95.00%</td>
+        <td style="padding: 8px; text-align: center;">95.00%</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">80.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">node-link</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">5.00%</td>
+        <td style="padding: 8px; text-align: center;">60.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">pie</td>
+        <td style="padding: 8px; text-align: center;">35.00%</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">65.00%</td>
+        <td style="padding: 8px; text-align: center;">25.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">70.00%</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">75.00%</td>
+        <td style="padding: 8px; text-align: center;">45.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px;">sankey</td>
+        <td style="padding: 8px; text-align: center;">80.00%</td>
+        <td style="padding: 8px; text-align: center;">85.00%</td>
+        <td style="padding: 8px; text-align: center;">30.00%</td>
+        <td style="padding: 8px; text-align: center;">65.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+        <td style="padding: 8px; text-align: center;">100.00%</td>
+        <td style="padding: 8px; text-align: center;">80.00%</td>
+        <td style="padding: 8px; text-align: center;">60.00%</td>
+        <td style="padding: 8px; text-align: center;">90.00%</td>
+        <td style="padding: 8px; text-align: center;">-</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; border-bottom: 2px solid #333;">scatter</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">-</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">90.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">65.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">45.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">55.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">-</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">95.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">85.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">45.00%</td>
+        <td style="padding: 8px; text-align: center; border-bottom: 2px solid #333;">75.00%</td>
+    </tr>
+    <tr>
+        <td style="padding: 8px; font-weight: bold;">Average</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">68.33%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">83.57%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">47.50%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">53.75%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">73.33%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">88.33%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">89.29%</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">67.50%*</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">64.38%*</td>
+        <td style="padding: 8px; font-weight: bold; text-align: center;">86.67%</td>
+    </tr>
+</tbody>
+</table>
+</div>
+
 
 ## Citation
 
